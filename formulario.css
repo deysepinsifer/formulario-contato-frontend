@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.corpo{
+    background-color: rgb(101, 101, 163);
+    margin: 20px;
+}
+
+#titulo{
+   
+    text-align: center;
+}
+.caixaFormulario{ 
+    
+    border-style:solid ;
+    border-radius: 7px;
+    margin: 2em 38em;
+    font-family:sans-serif;
+    font-size:20px;
+    color:rgb(236, 223, 223);
+    word-spacing: 4px;
+} 
+
+
+
+
+
+
