@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css" >
+  <script src="../js/jquery-3.6.0.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../js/buscar-contatos.js"></script>
+</head>
+
+<body class="corpo2">
+  
+  <div class="container">
+    <br>
+    <h1>Lista de Contatos</h1>
+    <br>
+    <br>
+  <table class="table">
+    <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Email</th>
+          <th scope="col">Endereco</th>
+          <th scope="col">Bairro</th>
+          <th scope="col">Cidade</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Telefone</th>
+          <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody id="resultados"></tbody>
+  </table>
+
+  <a href="../index.html">Voltar</a>
+  <div class="botaoEditar">
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Cadastro</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+          <div class="modal-body">
+            <form id="corpoFormulario">
+              <div class="form-group">
+              
+                  <br>
+                  <h2>CADASTRO</h2> 
+                  <br>
+            
+                  <label for="nome">Nome</label>
+                  <input type="text" name="nome" class="form-control" id="nomeInput" aria-describedby="emailHelp" placeholder="Seu nome" required>
+          </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" name="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Seu email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input type="text" name="endereco" class="form-control" id="enderecoInput" aria-describedby="emailHelp" placeholder="Seu endereco" required>
+              </div>
+
+              <div class="form-group">
+                <label for="bairro">Bairro</label>
+                <input type="text" name="bairro" class="form-control" id="bairroInput" aria-describedby="emailHelp" placeholder="Seu bairro" required>
+              </div>
+
+              <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <input type="text" name="cidade" class="form-control" id="cidadeInput" aria-describedby="emailHelp" placeholder="Sua cidade" required>
+              </div>
+
+              <div class="form-group">
+                <label for="estado">Estado</label>
+                <input type="text" name="estado" class="form-control" id="estadoInput" aria-describedby="emailHelp" placeholder="Seu Estado" required>
+              </div>
+
+              <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="text" name="telefone" class="form-control" id="telefoneInput" aria-describedby="emailHelp" placeholder="Seu telefone" required>
+              </div>
+            
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="botaoSalvarDoModal" onclick="atualizarPorId();">Salvar</button>
+              </div>
+            </form>
+            
+          </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+</body>
+</html>
