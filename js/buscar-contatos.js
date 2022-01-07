@@ -11,7 +11,16 @@ function excluirContato(id) {
 }
 
 function editarContato(id) {
-    buscarPorId(id)
+    $.ajax({
+        method:"put",
+        url: `http://localhost:3000/formulario/${id}`    
+     }).done(function(response) {
+        buscarPorId(response)
+    }).fail(function(e) {
+        alert("Houve um erro ao processar sua solicitação");
+    });
+    console.log(id);
+    
 }
 
 function buscarPorId(id) {
@@ -28,9 +37,10 @@ function buscarPorId(id) {
 
 
 function montarModalDeEdicao(contato){
+    $("#idInput").val(contato.id)
     $("#nomeInput").val(contato.nome)
     $("#emailInput").val(contato.email)
-    $("#enderecoInput").val(contato.endereco)
+    $("#logradouroInput").val(contato.logradouro)
     $("#bairroInput").val(contato.bairro)
     $("#cidadeInput").val(contato.cidade)
     $("#estadoInput").val(contato.estado)
@@ -42,22 +52,21 @@ function montarModalDeEdicao(contato){
 function buscarTodos(){
     $.ajax({
         method:"get",
-        url: "http://localhost:3000/formulario"    
+        url: `http://localhost:3000/formulario/`    
       }).done(function(contatos) {
       var templateItemString = `
       <tr>
         <th scope="row">#ID#</th>
         <td>#NOME#</td>
         <td>#EMAIL#</td>
-        <td>#CEP#</td>
-        <td>#ENDERECO#</td>
+        <td>#LOGRADOURO#</td>
         <td>#BAIRRO#</td>
         <td>#CIDADE#</td>
         <td>#ESTADO#</td>
         <td>#TELEFONE#</td>
         
         <td>
-            <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="editarContato(#ID#)">Editar</button>
+            <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="buscarPorId(#ID#)">Editar</button>
             
             <button type="button" class="btn btn-danger" onclick="excluirContato(#ID#)">Excluir</button>
         </td>
@@ -69,11 +78,11 @@ function buscarTodos(){
        var template = templateItemString.replaceAll("#ID#", contato.id);
        template = template.replace("#NOME#", contato.nome);
        template = template.replace("#EMAIL#", contato.email);
-       template = template.replace("#ENDERECO#", contato.endereco);
-       template = template.replace("#BAIRRO#", contato.bairro);
-       template = template.replace("#CIDADE#", contato.cidade);
-       template = template.replace("#ESTADO#", contato.estado);
-       template = template.replace("#TELEFONE#", contato.telefone);
+       template = template.replace("#LOGRADOURO#", contato.logradouro ? contato.logradouro : "");
+       template = template.replace("#BAIRRO#", contato.bairro ? contato.bairro : "");
+       template = template.replace("#CIDADE#", contato.cidade ? contato.cidade : "");
+       template = template.replace("#ESTADO#", contato.estado ? contato.estado : "");
+       template = template.replace("#TELEFONE#", contato.telefone ? contato.telefone : "");
       
        return template;
     });
@@ -83,38 +92,31 @@ function buscarTodos(){
     }).fail(function(e) {
         alert("Houve um erro ao processar sua solicitação");
     });
-
     
-
 }
 
 
 function atualizarPorId(){
 
+    var $id = $("#idInput");
     var $nome = $("#nomeInput");
     var $email = $("#emailInput");
-    var $cep = $("#ceplInput");
     var $logradouro = $("#logradouroInput");
-    var $endereco = $("#enderecoInput");
     var $bairro = $("#bairroInput");
-    var $complemento = $("#complementoInput");
     var $cidade = $("#cidadeInput");
     var $estado = $("#estadoInput");
-    var $tipo = $("#tipoInput");
     var $telefone = $("#telefoneInput");
 
+    var id = $id.val();
     var nome = $nome.val();
     var email = $email.val();
-    var cep = $cep.val();
     var logradouro = $logradouro.val();
-    var endereco = $endereco.val();
     var bairro = $bairro.val();
-    var complemento = $complemento.val();
     var cidade = $cidade.val();
     var estado = $estado.val();
-    var tipo = $tipo.val();
     var telefone = $telefone.val();
 
+    
     if (nome === "") {
         alert("obrigatório");
         return;
@@ -122,16 +124,8 @@ function atualizarPorId(){
     if (email === "") {
         alert("obrigatório");
         return;
-    } else 
-    if (cep === "") {
-        alert("obrigatório");
-        return;
     } else
     if (logradouro === "") {
-        alert("obrigatório");
-        return;
-    } else
-    if (endereco === "") {
         alert("obrigatório");
         return;
     } else
@@ -147,10 +141,6 @@ function atualizarPorId(){
         alert("obrigatório");
         return;
     } else
-    if (tipo === "") {
-        alert("obrigatório");
-        return;
-    } else
     if (telefone === "") {
         alert("obrigatório");
         return;
@@ -163,22 +153,21 @@ function atualizarPorId(){
         data: {
             nome: nome,
             email,
-            cep,
             logradouro,
-            endereco,
             bairro,
-            complemento,
             cidade,
             estado,
-            tipo,
             telefone
         }
       }).done(function() {
         $( this ).addClass( "done" );
         alert("Enviado com sucesso");
-        buscarTodos();
+        buscarPorId(id);
     }).fail(function(e) {
-        alert("Houve um erro ao processar sua solicitação");
+        alert("Houve um erro ao processar sua solicitação de edicao");
       });
-      buscarTodos();
+
+    
+
 }
+buscarTodos();

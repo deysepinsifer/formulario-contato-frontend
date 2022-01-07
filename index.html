@@ -1,145 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Formulário</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css" >
-    <script src="./js/jquery-3.6.0.js"></script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./js/enviarContato.js"></script>
-   
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Formulário</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <script src="./js/jquery-3.6.0.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/enviarContato.js"></script>
 </head>
 
 
 <body class="corpo">
-
   <div class="container">
     <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
         Menu
       </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="./index.html">Contato</a>
-          <a class="dropdown-item" href="./html/lista-contatos.html">Lista de contatos</a>
-        
-        </div>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="./index.html">Contato</a>
+        <a class="dropdown-item" href="./html/lista-contatos.html">Lista de contatos</a>
+
+      </div>
     </div>
     <form id="corpoFormulario">
-      
-          <br>
-          <br>
-          <h1>CADASTRO</h1> 
-          <br>
-          <br>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="nome">Nome</label>
-              <input type="text" name="nome" class="form-control" id="nomeInput" aria-describedby="emailHelp" placeholder="Seu nome" required>
-            </div>
-        
-            <div class="form-group col-md-6">
-              <label for="email">Email</label>
-              <input type="text" name="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="email@email.com" required>
-            </div>
-          </div>
 
-          <div class="form-row">
-             <div class="form-group col-md-6">
-              <label for="cep">CEP</label>
-              <input type="text" name="cep" class="form-control" id="cepInput" aria-describedby="emailHelp" placeholder="00000-000" required>
-             </div>
-            <div class="form-group col-md-6">
-              <label for="logradouroInput">Logradouro</label>
-                  <select id="logradouroInput" class="form-control">
-                    <option selected>Escolher...</option>
-                    <option>Rua</option>
-                    <option>Avenida</option>
-                    <option>Vila</option>
-                  </select>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="endereco">Endereço</label>
-              <input type="text" name="endereco" class="form-control" id="enderecoInput" aria-describedby="emailHelp" placeholder="Nome da rua e número" required>
-            </div>
-            <div class="form-group col-md-6">
-              <label for="bairro">Bairro</label>
-              <input type="text" name="bairro" class="form-control" id="bairroInput" aria-describedby="emailHelp" placeholder="Digite o bairro" required>
-            </div>
-          </div>
-
-           <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="complemento">Complemento</label>
-              <input type="text" name="complemento" class="form-control" id="complementoInput" aria-describedby="emailHelp" placeholder=" " required>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="cidadeInput">Cidade</label>
-              <input type="text" class="form-control" id="cidadeInput">
-            </div>
-            <div class="form-group col-md-4">
-              <label for="estadoInput">Estado</label>
-              <select id="estadoInput" class="form-control">
-                <option selected>Escolher...</option>
-                <option>AC</option>
-                <option>AL</option>
-                <option>AP</option>
-                <option>AM</option>
-                <option>BA</option>
-                <option>CE</option>
-                <option>DF</option>
-                <option>ES</option>
-                <option>GO</option>
-                <option>MA</option>
-                <option>MT</option>
-                <option>MS</option>
-                <option>MG</option>
-                <option>PA</option>
-                <option>PB</option>
-                <option>PR</option>
-                <option>PE</option>
-                <option>PI</option>
-                <option>RJ</option>
-                <option>RN</option>
-                <option>RS</option>
-                <option>RO</option>
-                <option>RR</option>
-                <option>SC</option>
-                <option>SP</option>
-                <option>SE</option>
-                <option>TO</option>
-              </select>
-            </div>
-          </div>
-        
-        <div class="form-row">
-          <div class="form-group col-md-6">
-              <label for="tipoInput">TIpo de Telefone</label>
-              <select id="tipoInput" class="form-control">
-                <option selected>Escolher...</option>
-                <option>Celular</option>
-                <option>Residencial</option>
-                <option>Comercial</option>
-                
-              </select>
-          </div>
-          <div class="form-group col-md-6">
-              <label for="telefone">Telefone</label>
-              <input type="text" name="telefone" class="form-control" id="telefoneInput" aria-describedby="emailHelp" placeholder="Seu telefone" required>
-          </div>
+      <br>
+      <br>
+      <h1>CADASTRO</h1>
+      <br>
+      <br>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nome">Nome</label>
+          <input type="text" name="nome" class="form-control" id="nomeInput" aria-describedby="emailHelp"
+            placeholder="Seu nome" required>
         </div>
 
-        <div class="form-group">
-              <label for="mensagem">Mensagem</label>
-              <textarea type="text" name="mensagem" class="form-control" id="mensagemInput" aria-describedby="emailHelp" placeholder="Conteúdo da mensagem" required></textarea>
+        <div class="form-group col-md-6">
+          <label for="email">Email</label>
+          <input type="email" name="email" class="form-control" id="emailInput" aria-describedby="emailHelp"
+            placeholder="email@email.com" required>
         </div>
-        <button type="button" class="btn btn-primary enviar" HTMLButtonElement.onclick="Enviar();">Enviar </button>
-      </form>
-</div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="cep">CEP</label>
+          <input type="text" name="cep" class="form-control" id="cepInput" aria-describedby="emailHelp"
+            placeholder="00000-000" required>
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="tipoDeLogradouroInput">Tipo de Logradouro</label>
+          <select id="tipoDeLogradouroInput" class="form-control">
+            <option selected>Escolher...</option>
+            <option>Rua</option>
+            <option>Avenida</option>
+            <option>Vila</option>
+            <option>Alameda</option>
+          </select>
+        </div>
+       
+          <div class="form-group col-md-6">
+            <label for="logradouro">Logradouro</label>
+            <input type="text" name="logradouro" class="form-control" id="logradouroInput" aria-describedby="emailHelp"
+              placeholder="Nome da rua e número" required>
+          </div>
+
+          <div class="form-group col-md-1">
+            <label for="numero">Nº</label>
+            <input type="text" name="numero" class="form-control" id="numeroInput" aria-describedby="emailHelp"
+              placeholder="Número da casa" required>
+          </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="complemento">Complemento</label>
+          <input type="text" name="complemento" class="form-control" id="complementoInput" aria-describedby="emailHelp"
+            placeholder=" " required>
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="bairro">Bairro</label>
+          <input type="text" name="bairro" class="form-control" id="bairroInput" aria-describedby="emailHelp"
+            placeholder="Digite o bairro" required>
+        </div>
       
+        
+        <div class="form-group col-md-3">
+          <label for="cidadeInput">Cidade</label>
+          <input type="text" class="form-control" id="cidadeInput">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="estadoInput">Estado</label>
+          <select id="estadoInput" class="form-control">
+            <option selected>Escolher...</option>
+            <option>AC</option>
+            <option>AL</option>
+            <option>AP</option>
+            <option>AM</option>
+            <option>BA</option>
+            <option>CE</option>
+            <option>DF</option>
+            <option>ES</option>
+            <option>GO</option>
+            <option>MA</option>
+            <option>MT</option>
+            <option>MS</option>
+            <option>MG</option>
+            <option>PA</option>
+            <option>PB</option>
+            <option>PR</option>
+            <option>PE</option>
+            <option>PI</option>
+            <option>RJ</option>
+            <option>RN</option>
+            <option>RS</option>
+            <option>RO</option>
+            <option>RR</option>
+            <option>SC</option>
+            <option>SP</option>
+            <option>SE</option>
+            <option>TO</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="tipoInput">Tipo de Telefone</label>
+          <select id="tipoInput" class="form-control">
+            <option selected>Escolher...</option>
+            <option>Celular</option>
+            <option>Residencial</option>
+            <option>Comercial</option>
+          </select>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="ddd">DDD</label>
+          <input type="tel" name="ddd" class="form-control" id="dddInput" aria-describedby="emailHelp"
+            placeholder="digite o DDD" required>
+        </div>
+        
+        <div class="form-group col-md-4">
+          <label for="telefone">Telefone</label>
+          <input type="tel" name="telefone" class="form-control" id="telefoneInput" aria-describedby="emailHelp"
+            placeholder="Seu telefone" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="mensagem">Mensagem</label>
+        <textarea type="text" name="mensagem" class="form-control" id="mensagemInput" aria-describedby="emailHelp"
+          placeholder="Conteúdo da mensagem" required></textarea>
+      </div>
+      <button type="button" class="btn btn-primary enviar" onclick="enviarContato();">Enviar </button>
+    </form>
+  </div>
+
 </body>
+
 </html>
