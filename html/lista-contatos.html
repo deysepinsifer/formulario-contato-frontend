@@ -10,7 +10,8 @@
   <script src="../js/jquery-3.6.0.js"></script>
   <script src="../js/bootstrap.bundle.min.js"></script>
   <script src="../js/buscar-contatos.js"></script>
- 
+  <script src="../js/editarContato.js"></script>
+
 </head>
 
 <body class="corpo2">
@@ -29,10 +30,10 @@
           <th scope="col">Logradouro</th>
           <th scope="col">Bairro</th>
           <th scope="col">Cidade</th>
-          <th scope="col">Estado</th>
           <th scope="col">Telefone</th>
           <th scope="col"></th>
-         
+          <th scope="col"></th>
+
         </tr>
       </thead>
       <tbody id="resultados"></tbody>
@@ -58,7 +59,7 @@
                   <h2>CADASTRO</h2>
                   <br>
 
-                  <input type="hidden" name="id" class="form-control" id="idInput" required/>
+                  <input type="hidden" name="id" class="form-control" id="idInput" required />
 
                   <label for="nome">Nome</label>
                   <input type="text" name="nome" class="form-control" id="nomeInput" aria-describedby="emailHelp"
@@ -67,7 +68,19 @@
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input type="email" name="email" class="form-control" id="emailInput" aria-describedby="emailHelp"
-                    placeholder="Seu email" required>
+                    placeholder="Seu email" disabled>
+                </div>
+
+                <div class="form-group">
+                  <label for="cep">Cep</label>
+                  <input type="text" name="cep" class="form-control" id="cepInput" aria-describedby="emailHelp"
+                    placeholder="00000-000" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="tipoDeLogradouro">Tipo de Logradouro</label>
+                  <input type="text" name="tipoDeLogradouro" class="form-control" id="tipoDeLogradouroInput"
+                    aria-describedby="emailHelp" placeholder="rua, alameda, avenida..." required>
                 </div>
 
                 <div class="form-group">
@@ -95,15 +108,28 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="tipo">Tipo de Telefone</label>
+                  <input type="text" name="tipo" class="form-control" id="tipoInput" aria-describedby="emailHelp"
+                    placeholder="celular, residencial..." required>
+                </div>
+
+                <div class="form-group">
+                  <label for="ddd">DDD</label>
+                  <input type="text" name="ddd" class="form-control" id="dddInput" aria-describedby="emailHelp"
+                    placeholder="ddd" required>
+                </div>
+
+
+                <div class="form-group">
                   <label for="telefone">Telefone</label>
-                  <input type="tel" name="telefone" class="form-control" id="telefoneInput"
-                    aria-describedby="emailHelp" placeholder="Seu telefone" required>
+                  <input type="tel" name="telefone" class="form-control" id="telefoneInput" aria-describedby="emailHelp"
+                    placeholder="Seu telefone" required>
                 </div>
 
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                   <button type="button" class="btn btn-primary" id="botaoSalvarDoModal"
-                    onclick="atualizarPorId();">Salvar</button>
+                    onclick="atualizar();">Salvar</button>
                 </div>
               </form>
 
